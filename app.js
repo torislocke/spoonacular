@@ -18,7 +18,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // connect to Mongo Database
-const MONGODB_URI = 'mongodb+srv://tbox:MongoDB12@cluster0.iuae0.mongodb.net/final-project?retryWrites=true&w=majority';
+const MONGODB_URI = process.env.MONGODB_URL;
 
 const options = {
 	useUnifiedTopology: true,
