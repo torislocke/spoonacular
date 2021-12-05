@@ -1,0 +1,33 @@
+{{>header}}
+<title>Recipe Finder</title>
+</head>
+
+<body>
+
+	{{#if user}}
+	{{>auth_nav}}
+	{{else}}
+	{{>unauth_nav}}
+	{{/if}}
+
+	<main>
+		<section>
+			<div id="content-wrap">
+				<h1 class="title-center">Recipe Search</h1>
+
+				<p class="search-description">
+					<em>Search by recipe name or ingredients:</em>
+				</p>
+
+				{{>search_form large=true}}
+
+
+				{{#unless user}}
+				<div class="signup">
+					<p>If you would like to save your favorite recipes, please create an account, then log in</p>
+					{{/unless}}
+				</div>
+		</section>
+	</main>
+
+	{{>footer}}

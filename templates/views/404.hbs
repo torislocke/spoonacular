@@ -1,0 +1,29 @@
+	{{>header}}
+		<title>404 Error</title>
+	</head>
+	  <body class="errorPage">
+    		{{#if user}}
+			{{>auth_nav}}
+		{{else}}
+			{{>unauth_nav}}
+		{{/if}}
+            <main>
+                <div id="content-wrap">
+                    <div class="jumbotron text-center" id="errorPage">
+                        <div class="container errorContainer">
+                            <h1 id="errorTitle">
+                               404 Error
+                            </h1>
+                            <p>The page you are looking for can't be found.</p>
+                            <div class="homePage-link">
+                                <form action="/" method="get">
+                                    <button type="submit" id="homePage-button" class="glow-on-hover">GO TO HOME
+                                        PAGE</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+    {{>footer}}

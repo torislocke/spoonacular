@@ -1,0 +1,30 @@
+{
+  "version": "1.0.0",
+  "description": "Team Six Node JS application for final",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "Tori Locke",
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nock": "^12.0.3",
+    "nodemon": "^2.0.3"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^7.1.0",
+    "axios": "^0.24.0",
+    "bad-words": "^3.0.3",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "express-validator": "^6.13.0",
+    "hbs": "^4.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "mongoose": "^5.9.10"
+  },
+  "name": "recipe-finder-master"
+}

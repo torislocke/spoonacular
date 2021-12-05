@@ -1,0 +1,18 @@
+{{>header}}
+<title>Favorites</title>
+</head>
+
+<body>
+	{{>auth_nav}}
+	<main>
+		<div id="content-wrap">
+			{{#if results}}
+			<h2>Your favorite recipes:</h2>
+			{{>favorite_recipes}}
+			{{else}}
+			<p class="information-message">You have no favorite recipes yet! :(</p>
+			{{/if}}
+		</div>
+	</main>
+
+{{>footer}}
