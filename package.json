@@ -6,8 +6,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torislocke/spoonacular"
+  },
   "author": "Tori Locke",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/torislocke/spoonacular/issues"
+  },
+  "homepage": "https://github.com/torislocke/spoonacular#readme",
   "devDependencies": {
     "dotenv": "^8.2.0",
     "nock": "^12.0.3",
@@ -26,5 +34,5 @@
     "moment": "^2.24.0",
     "mongoose": "^5.9.10"
   },
-  "name": "recipe-finder-master"
+  "name": "recipe-finder"
 }
