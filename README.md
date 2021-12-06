@@ -1,7 +1,17 @@
 # Recipe Finder
 Website created by CSE341 team 6 as final project to reinforce learning Node.js
+_______________________________________________________________________________________________________________
+To run this on your local machine (localhost:5000) you need to create a .env file at the root level and add your
+individual information - your sendgrid api key, mongo database, your email and a spoonaculari api key (free)
 
-Location: https://cse341-final-project-team-6.herokuapp.com/
+SENDGRID_API_KEY=
+MONGODB_URL=
+JWT_SECRET=MY_SECRET_KEY
+SENDEMAIL = 
+SPOONACULAR_API_KEY=
+___________________________________________________________________________________________________________
+
+Location: (Need to add a Heroku server location)
 
 The functionalities present in the website are:
 
@@ -31,7 +41,7 @@ Recipes are retrieved using API fetch from the [Spoonacular food and recipes API
 - HTML5
 - CSS3
 - JavaScript
-- Bootstrap 4.4.1
+
 
 #### Back-end:
 
@@ -53,8 +63,7 @@ Recipes are retrieved using API fetch from the [Spoonacular food and recipes API
 ## Assets credits
 
 - Logo: Kina Michie
-- Favicon: https://icon-icons.com/
-- Images: https://pixabay.com/
+
 
 
 
