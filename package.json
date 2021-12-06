@@ -34,5 +34,5 @@
     "moment": "^2.24.0",
     "mongoose": "^5.9.10"
   },
-  "name": "recipe-finder"
+  "name": "recipe-finder-master"
 }
