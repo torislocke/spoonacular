@@ -23,8 +23,8 @@ const MONGODB_URI = process.env.MONGODB_URL;
 const options = {
 	useUnifiedTopology: true,
 	useNewUrlParser: true,
-	// useCreateIndex: true,
-	// useFindAndModify: false,
+	useCreateIndex: true,
+	useFindAndModify: false,
 	family: 4,
   };
 // Set HTTP to HTTPS redirection:
