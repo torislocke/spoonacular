@@ -60,12 +60,12 @@ app.use(loggedRouter);
 app.use(unloggedRouter);
 
 // Route for 404 page:
-app.get('*', verifyToken, (req, res) => {
-	res.render('404', {
-		user: req.user,
-		path: /404
-	});
-});
+// app.get('*', verifyToken, (req, res) => {
+// 	res.render('404', {
+// 		user: req.user,
+// 		path: /404
+// 	});
+// });
 
 // Start server:
 app.listen(port, () => {
