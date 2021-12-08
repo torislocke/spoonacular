@@ -6,6 +6,7 @@ const freeRouter = require('./routers/free');
 const loggedRouter = require('./routers/logged');
 const unloggedRouter = require('./routers/unlogged');
 const { verifyToken } = require('./middleware/auth');
+const mongoose = require("mongoose");
 
 // Create app, set port number:
 const app = express();
@@ -30,9 +31,16 @@ if (process.env.NODE_ENV === 'development') {
 	require('./mocks/http/nock_config');
 }
 
-// Connect to the database:
-require('./db/connect');
+// connect to Mongo Database
+const MONGODB_URI = process.env.MONGODB_URL;
 
+const options = {
+	useUnifiedTopology: true,
+	useNewUrlParser: true,
+	// useCreateIndex: true,
+	// useFindAndModify: false,
+	// family: 4,
+  };
 // Use cookie-parser middleware:
 app.use(cookieParser());
 
@@ -66,7 +74,13 @@ app.get('*', verifyToken, (req, res) => {
 	});
 });
 
-// Start server:
-app.listen(port, () => {
-	console.log('Server listening on port', port);
-});
+
+
+mongoose
+  .connect(MONGODB_URI, options)
+  .then((result) => {
+    app.listen(PORT, () => console.log(`Listening on ${PORT}`));
+  })
+  .catch((err) => {
+    console.log(err);
+  });
