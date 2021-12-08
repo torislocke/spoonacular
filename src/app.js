@@ -4,10 +4,10 @@ const mongoose = require("mongoose");
 // testing out the use of handlebars // new
 const hbs = require('hbs');
 const cookieParser = require('cookie-parser');
-const freeRouter = require('./src/routers/all');
-const loggedRouter = require('./src/routers/logged');
-const unloggedRouter = require('./src/routers/unlogged');
-const { verifyToken } = require('./src/middleware/auth');
+const freeRouter = require('/src/routers/all');
+const loggedRouter = require('/src/routers/logged');
+const unloggedRouter = require('/src/routers/unlogged');
+const { verifyToken } = require('/src/middleware/auth');
 const compression = require('compression');
 // const MongoDBStore = require("connect-mongodb-session")(session);
 require('dotenv').config();
