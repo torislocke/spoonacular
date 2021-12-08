@@ -264,6 +264,12 @@ main {
     max-width: 90%;
     margin: auto;
    }
+   
+@media (max-width: 768px) {
+  #content-wrap {
+    margin-top: 14rem;
+  }
+}
     
   footer {
     display: grid;

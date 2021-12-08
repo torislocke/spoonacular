@@ -1,15 +1,16 @@
 {
   "version": "1.0.0",
   "description": "Team Six Node JS application for final",
-  "main": "index.js",
   "scripts": {
-    "start": "node test.js"
+    "start": "NODE_ENV=production node test.js",
+    "start-server": "node app.js",
+    "start:dev": "nodemon app.js"
+
   },
   "author": "Tori Locke",
   "license": "ISC",
   "devDependencies": {
     "dotenv": "^8.2.0",
-    "nock": "^12.0.3",
     "nodemon": "^2.0.3"
   },
   "dependencies": {

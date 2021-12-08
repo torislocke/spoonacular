@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 // testing out the use of handlebars // new
 const hbs = require('hbs');
 const cookieParser = require('cookie-parser');
-const freeRouter = require('./src/routers/free');
+const freeRouter = require('./src/routers/all');
 const loggedRouter = require('./src/routers/logged');
 const unloggedRouter = require('./src/routers/unlogged');
 const { verifyToken } = require('./src/middleware/auth');
@@ -16,6 +16,8 @@ const app = express();
 
 // all application to run on Heroku or localhost:5000
 const PORT = process.env.PORT || 5000;
+
+console.log(process.env.NODE_ENV);
 
 // connect to Mongo Database
 const MONGODB_URI = process.env.MONGODB_URL;
