@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 const mongoose = require("mongoose");
-// testing out the use of handlebars
+// testing out the use of handlebars // new
 const hbs = require('hbs');
 const cookieParser = require('cookie-parser');
 const freeRouter = require('./src/routers/all');
