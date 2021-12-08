@@ -16,7 +16,7 @@
 				{{response.title}}
 				{{#if user}}
 				<span id="fav-badge" class="badge {{#unless isFav}}{{/unless}}">Favorite</span>
-				<button id="fav-button" recipeId={{response.id}} class="btn {{#if isFav}}{{/if}}">Add to
+				<button type="submit" id="fav-button" recipeId={{response.id}} class="btn {{#if isFav}}{{/if}}">Add to
 					Favorites</button>
 				{{/if}}
 			</h2>

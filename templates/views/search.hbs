@@ -3,46 +3,41 @@
 </head>
 
 <body>
-		{{#if user}}
-			{{>auth_nav}}
-		{{else}}
-			{{>unauth_nav}}
-		{{/if}}
+	{{#if user}}
+	{{>auth_nav}}
+	{{else}}
+	{{>unauth_nav}}
+	{{/if}}
 
-		<main>
+	<main>
 		<div id="content-wrap">
-			<div class="search-results">
-					<h2>Search results for: &nbsp <em>{{searchText}}</em></h2>
-				</div>
-			
+
+			<h2>Search results for: &nbsp <em>{{searchText}}</em></h2>
 
 			{{!-- Top pagination nav. --}}
-			{{#if pagination}}	
-						{{>pagination_nav}}
-			
+			{{#if pagination}}
+			{{>pagination_nav}}
+
 			{{/if}}
+
+
+			{{#if results}}
+			<div class="search-results">
+				{{>search_results}}
+				{{else}}
+				<p class="information-message">No results found! :(</p>
+				{{/if}}
 			
-			<div class="row">
-				<div class="col-12">
-					{{#if results}}
-						{{>search_results}}
-					{{else}}
-						<p class="information-message">No results found! :(</p>
-					{{/if}}
-				</div>
-			</div>
 
 			{{!-- Bottom pagination nav. --}}
 			{{#if pagination}}
-				<div class="row">
-					<div class="col-12">
-						{{>pagination_nav}}
-					</div>
-				</div>
+
+			{{>pagination_nav}}
+
 			{{/if}}
+			</div>
+
 
 		</div>
-		</main>
-		{{>footer}}
-
-		
+	</main>
+	{{>footer}}

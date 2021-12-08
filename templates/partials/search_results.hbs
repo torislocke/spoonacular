@@ -1,26 +1,32 @@
 {{!-- Render search results on search.hbs view. --}}
-{{#each results}}
+<div class="result">
+	{{#each results}}
+
 	<div class="card {{#if this.isFav}}{{/if}}">
 		<div class="card-header">
-			<h5>
+			<h2>
 				<a href="/recipe?id={{this.id}}">{{{this.title}}}</a>
 				{{#if this.isFav}}
-					<span class="badge float-right">Favorite</span>
+				<span class="badge float-right">Favorite</span>
 				{{/if}}
-			</h5>
+			</h2>
 		</div>
-		<div class="card-body">
+		<div class="card-image">
 			<a href="/recipe?id={{this.id}}">
 				<img src="{{this.image}}" class="img-fluid result-image mr-3">
 			</a>
+		</div>
+		<div class="card-body">
 			<p>{{{this.summary}}}</p>
 		</div>
 		{{#if this.dishTypes}}
-			<div class="card-footer">
-				{{#each this.dishTypes}}
-					<span class="badge badge-pill badge-success text-wrap">{{this}}</span>
-				{{/each}}
-			</div>
+		<div class="card-footer">
+			{{#each this.dishTypes}}
+			<span class="badge badge-pill text-wrap">{{this}}</span>
+			{{/each}}
+		</div>
 		{{/if}}
 	</div>
-{{/each}}
+
+	{{/each}}
+</div>

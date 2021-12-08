@@ -8,6 +8,7 @@ const freeRouter = require('./src/routers/all');
 const loggedRouter = require('./src/routers/logged');
 const unloggedRouter = require('./src/routers/unlogged');
 const { verifyToken } = require('./src/middleware/auth');
+const compression = require('compression');
 // const MongoDBStore = require("connect-mongodb-session")(session);
 require('dotenv').config();
 
@@ -45,6 +46,8 @@ if (process.env.PORT) {
 
 // Use cookie-parser middleware:
 app.use(cookieParser());
+// use compression middleware by calling function
+app.use(compression());
 
 // Allow json and x-www-form-urlencoded as body parsers for POST method:
 app.use(express.json());
