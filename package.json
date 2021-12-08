@@ -2,7 +2,7 @@
   "version": "1.0.0",
   "description": "Team Six Node JS application for final",
   "scripts": {
-    "start": "node test.js",
+    "start": "node src/app.js",
     "start-server": "node src/app.js",
     "start:dev": "nodemon src/app.js"
   },
