@@ -30,11 +30,12 @@ const options = {
 	useFindAndModify: false,
 	family: 4,
   };
+
 // Set HTTP to HTTPS redirection:
 // https://stackoverflow.com/questions/7185074/heroku-nodejs-http-to-https-ssl-forced-redirect/23894573#23894573
 // https://www.tonyerwin.com/2014/09/redirecting-http-to-https-with-nodejs.html
 app.enable('trust proxy');
-if (process.env.PORT) {
+if (process.env.NODE_ENV === 'production') {
 	app.use((req, res, next) => {
 		if (req.headers['x-forwarded-proto'] !== 'https') {
 			return res.redirect(301, ['https://', req.get('Host'), req.baseUrl].join(''));
@@ -54,9 +55,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Local paths:
-const pubDir = path.join(__dirname, './public');
-const viewsPath = path.join(__dirname, './templates/views');
-const partialsPath = path.join(__dirname, './templates/partials');
+const pubDir = path.join(__dirname, '../public');
+const viewsPath = path.join(__dirname, '../templates/views');
+const partialsPath = path.join(__dirname, '../templates/partials');
 
 // Setup handlebars. Set views and partials locations:
 app.set('view engine', 'hbs');
@@ -73,11 +74,13 @@ app.use(unloggedRouter);
 
 // Route for 404 page:
 app.get('*', verifyToken, (req, res) => {
-	res.render('404', {
+	res.render('message', {
 		user: req.user,
-		path: '/404'
+		message: 'Page not found!'
 	});
 });
+
+
 
 mongoose
   .connect(MONGODB_URI, options)
